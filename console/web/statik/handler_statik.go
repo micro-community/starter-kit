@@ -5,11 +5,11 @@ package statik
 import (
 	"net/http"
 
-	"github.com/micro/go-micro/v2/util/log"
+	log "github.com/micro/go-micro/v3/logger"
 	"github.com/rakyll/statik/fs"
 )
 
-func Handler(prefix string) http.Handler {
+func Handler() http.Handler {
 	statikFS, err := fs.New()
 	if err != nil {
 		log.Fatal(err)
